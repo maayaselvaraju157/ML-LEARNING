@@ -1,0 +1,296 @@
+1. Introduction to Seaborn
+Definition: Seaborn is a Python library used to create statistical graphs and visualize data.
+#Example program
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.histplot([10, 20, 30, 40, 50])
+plt.show()
+
+Output: A histogram showing the distribution of the values.
+
+2. Installation
+Definition: Installation adds the Seaborn library to Python so that we can use its plotting functions.
+pip install seaborn matplotlib pandas numpy
+
+Output: Seaborn and the required libraries are installed.
+
+3. Loading a Dataset
+Definition: A dataset is a collection of data arranged in rows and columns. Seaborn provides sample datasets for practice.
+import seaborn as sns
+df = sns.load_dataset("tips")
+print(df.head())
+
+Output: The first five rows of the tips dataset.
+
+4. Basic Syntax
+Definition: Seaborn plotting functions use data and variables to create graphs.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.scatterplot(x=[1, 2, 3], y=[10, 20, 30])
+plt.show()
+
+Output: A scatter plot containing three points.
+
+5. Line Plot
+Definition: A line plot shows trends or changes in data over an ordered sequence.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.lineplot(x=[1, 2, 3], y=[10, 20, 30], marker="o")
+plt.show()
+
+Output: A rising line connecting three points.
+
+6. Scatter Plot
+Definition: A scatter plot shows the relationship between two numerical variables using individual points.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.scatterplot(x=[1, 2, 3], y=[5, 10, 15])
+plt.show()
+
+Output: Three points showing an upward relationship.
+
+7. Bar Plot
+Definition: A bar plot compares a numerical summary, usually the mean, across different categories.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.barplot(x=["A", "B", "C"], y=[40, 60, 80], errorbar=None)
+plt.show()
+
+Output: Three bars with heights 40, 60, and 80.
+
+8. Count Plot
+Definition: A count plot displays the number of observations in each category.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.countplot(x=["A", "B", "A", "C", "A", "B"])
+plt.show()
+
+Output: A = 3, B = 2, C = 1.
+
+9. Histogram
+Definition: A histogram shows the frequency distribution of numerical data using intervals called bins.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.histplot([10, 10, 20, 20, 20, 30], bins=3)
+plt.show()
+
+Output: Bars showing how frequently values occur within each interval.
+
+10. Box Plot
+Definition: A box plot summarizes data using quartiles and the median, and helps identify potential outliers.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.boxplot(y=[10, 20, 30, 40, 50, 100])
+plt.show()
+
+Output: A box showing the data distribution, with a potential outlier at 100.
+
+11. Violin Plot
+Definition: A violin plot shows the distribution and density of numerical data across categories.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.violinplot(x=["A","A","A","B","B","B"], y=[10,20,30,40,50,60])
+plt.show()
+
+Output: Two violin shapes representing the distributions of groups A and B.
+
+12. KDE Plot
+Definition: A KDE plot displays a smooth estimate of the probability density of numerical data.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.kdeplot(x=[10,20,25,30,35,40,50], fill=True)
+plt.show()
+
+Output: A smooth density curve showing where values are concentrated.
+
+13. Regression Plot
+Definition: A regression plot shows the relationship between two numerical variables with a fitted regression line.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.regplot(x=[1,2,3,4,5], y=[10,20,25,40,50])
+plt.show()
+
+Output: Data points with an upward-sloping regression line.
+
+14. Heatmap
+Definition: A heatmap represents numerical values using different colors in a grid.
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as npdata = np.array([[1,2],[3,4]])
+sns.heatmap(data, annot=True)
+plt.show()
+
+Output: A 2 × 2 colored grid displaying 1, 2, 3, and 4.
+
+15. Pair Plot
+Definition: A pair plot displays pairwise relationships between numerical variables in a dataset.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("iris")
+sns.pairplot(df, hue="species")
+plt.show()
+
+Output: A grid of scatter plots and distribution plots for the Iris dataset.
+
+16. Joint Plot
+Definition: A joint plot shows the relationship between two variables along with their individual distributions.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("tips")
+sns.jointplot(data=df, x="total_bill", y="tip")
+plt.show()
+
+Output: A scatter plot with distribution plots along the top and right sides.
+
+17. Strip Plot
+Definition: A strip plot displays individual observations across different categories.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.stripplot(x=["A","A","B","B"], y=[10,20,30,40], jitter=True)
+plt.show()
+
+Output: Individual points displayed for categories A and B.
+
+18. Swarm Plot
+Definition: A swarm plot displays individual observations while attempting to prevent points from overlapping.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.swarmplot(x=["A","A","B","B"], y=[10,20,30,40])
+plt.show()
+
+Output: Individual points arranged within each category with minimal overlap.
+
+19. Point Plot
+Definition: A point plot compares numerical summaries, usually means, across categories using points and uncertainty intervals.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.pointplot(x=["A","B","C"], y=[20,40,60])
+plt.show()
+
+Output: Three points representing the values for A, B, and C, connected by a line.
+
+20. Cat Plot
+Definition: A categorical plot provides a common interface for creating different types of categorical visualizations.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("tips")
+sns.catplot(data=df, x="day", y="total_bill", kind="box")
+plt.show()
+
+Output: Box plots comparing total bills across days.
+
+21. Theme and Style
+Definition: Seaborn themes change the overall appearance of graphs, including backgrounds, grid lines, and color palettes.
+import seaborn as sns 
+import matplotlib.pyplot as plt
+sns.set_theme(style="whitegrid")
+sns.histplot(x=[10,20,20,30,40,50])
+plt.show()
+
+Output: A histogram displayed with a white background and grid lines.
+
+22. Color Palettes
+Definition: Color palettes control the colors used in Seaborn visualizations.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set_palette("pastel")
+sns.barplot(x=["A","B","C"], y=[20,40,60])
+plt.show()
+
+Output: Three bars displayed using pastel colors.
+
+23. FacetGrid
+Definition: FacetGrid creates multiple plots by dividing a dataset according to categorical variables.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("tips")
+g = sns.FacetGrid(df, col="time")
+g.map_dataframe(sns.scatterplot, x="total_bill", y="tip")
+plt.show()
+
+Output: Separate scatter plots for lunch and dinner.
+
+24. Relplot
+Definition: relplot() is a figure-level function for visualizing relationships between variables using scatter or line plots.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("tips")
+sns.relplot(data=df, x="total_bill", y="tip", hue="sex")
+plt.show()
+
+Output: A scatter plot with different colors for each sex category.
+
+25. Displot
+Definition: displot() is a figure-level function for visualizing numerical distributions using histograms, KDE plots, or ECDF plots.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("tips")
+sns.displot(data=df, x="total_bill", kind="hist")
+plt.show()
+
+Output: A histogram displaying the distribution of restaurant bills.
+
+26. Handling Missing Values
+Definition: Missing values are data entries that are unavailable or not recorded. They should be identified before visualization and analysis.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("penguins")
+sns.heatmap(df.isnull(), cbar=False)
+plt.show()
+
+Output: A heatmap showing the locations of missing values in the dataset.
+
+27. Correlation
+Definition: Correlation measures the strength and direction of the relationship between two numerical variables.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("penguins")
+corr = df.select_dtypes(include="number").corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.show()
+
+Output: A correlation matrix with values between −1 and +1.
+
+28. Saving a Plot
+Definition: Seaborn graphs can be saved as image files using Matplotlib's savefig() function.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.histplot(x=[10,20,30,40,50])
+plt.savefig("myplot.png")
+plt.show()
+
+Output: The graph appears on screen and is saved as myplot.png in the current working directory.
+
+29. Seaborn in Machine Learning (EDA)
+Definition: Exploratory Data Analysis (EDA) uses visualizations and statistical summaries to understand data before training a Machine Learning model.
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = sns.load_dataset("iris")
+sns.scatterplot(data=df, x="sepal_length", y="petal_length", hue="species")
+plt.show()
+
+Output: A scatter plot comparing sepal length and petal length across Iris species.
+
+Use: This helps identify patterns and differences between classes before model training.
+
+Quick Revision
+Topic	Function
+Violin plot	sns.violinplot()
+KDE plot	sns.kdeplot()
+Regression plot	sns.regplot()
+Heatmap	        sns.heatmap()
+Pair plot	sns.pairplot()
+Joint plot	sns.jointplot()
+Strip plot	sns.stripplot()
+Swarm plot	sns.swarmplot()
+Point plot	sns.pointplot()
+Cat plot	sns.catplot()
+Theme	        sns.set_theme()
+Color palette	sns.set_palette()
+FacetGrid	sns.FacetGrid()
+Relplot  	sns.relplot()
+Displot	        sns.displot()
+Missing values	df.isnull()
+Correlation	df.corr()
+Save graph	plt.savefig()
+#Graph are visualized if we want color and types.....
