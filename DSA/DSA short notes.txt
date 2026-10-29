@@ -1,0 +1,698 @@
+Level 1: DSA Basics
+1. What is DSA?
+DSA helps us store data efficiently and solve problems step by step.
+
+Example: Finding the largest number in a list.
+numbers = [10, 25, 5, 40]
+print(max(numbers))
+Output:
+40
+
+
+2. What is a Data Structure?
+A data structure is a way to store and organize data.
+
+Examples: List, Stack, Queue, Tree, Graph.
+numbers = [10, 20, 30]
+print(numbers)
+Output:
+[10, 20, 30]
+
+
+3. What is an Algorithm?
+An algorithm is a step-by-step procedure to solve a problem.
+a = 10b = 20
+print(a + b)
+Output:
+30
+
+
+4. Time Complexity
+Time complexity describes how an algorithm's running time grows as the input size increases.
+Complexity	Meaning	Example
+(O(1))	        Constant time	Access a list element by index
+(O(log n))	Logarithmic	Binary search
+(O(n))   	Linear	Linear search
+(O(n\log n))	Linearithmic	Merge sort
+(O(n^2))	Quadratic	Basic bubble sort
+
+5. Space Complexity
+Space complexity describes how much additional memory an algorithm needs.
+numbers = [1, 2, 3, 4
+]print(numbers[0])
+Output:
+1
+
+
+Level 2: Arrays and Strings
+6. Array / List
+A list stores multiple values in one variable. Python lists can grow or shrink and can hold different data types.
+numbers = [10, 20, 30]
+print(numbers[1])
+Output:
+20
+
+
+7. Traversing an Array
+Traversing means visiting each element one by one.
+numbers = [10, 20, 30]
+for n in numbers:   
+   print(n)
+Output:
+10
+20
+30
+
+
+8. Insertion
+Insertion means adding a new element to a list.
+numbers = [10, 20, 30]
+numbers.insert(1, 15)
+print(numbers)
+Output:
+[10, 15, 20, 30]
+
+
+9. Deletion
+Deletion means removing an element from a list.
+numbers = [10, 20, 30]
+numbers.remove(20)
+print(numbers)
+Output:
+[10, 30]
+
+
+10. Reversing an Array
+Reversing means changing the order of elements from last to first.
+numbers = [1, 2, 3, 4]
+print(numbers[::-1])
+Output:
+[4, 3, 2, 1]
+
+
+11. Strings
+A string is a sequence of characters.
+text = "Python"
+print(text[0])
+print(text[::-1])
+Output:
+P
+nohtyP
+
+
+12. Palindrome
+A palindrome reads the same forward and backward.
+word = "madam"
+print(word == word[::-1])
+Output:
+True
+
+
+Level 3: Searching Algorithms
+13. Linear Search
+Linear search checks each element one by one until the target is found.
+a = [10, 20, 30, 40]
+target = 30
+for i in range(len(a)):  
+  if a[i] == target:      
+  print("Found at index", i)    
+    break
+Output:
+Found at index 2
+
+
+Time complexity: \(O(n)\)
+14. Binary Search
+Binary search repeatedly divides a sorted list into halves to find the target.
+a = [10, 20, 30, 40, 50]
+target = 40low, high = 0, len(a) - 1while low <= high:   
+ mid = (low + high) // 2   
+ if a[mid] == target:     
+   print("Found at index", mid)    
+    break    elif a[mid] < target:   
+     low = mid + 1    
+else:      
+  high = mid - 1
+Output:
+Found at index 3
+
+
+Time complexity: \(O(\log n)\)
+Level 4: Sorting Algorithms
+15. Bubble Sort
+Bubble sort compares adjacent elements and swaps them when they are in the wrong order.
+a = [5, 3, 1, 4]
+for i in range(len(a)):
+    for j in range(len(a) - 1 - i):    
+    if a[j] > a[j + 1]:        
+    a[j], a[j + 1] = a[j + 1], a[j]
+print(a)
+Output:
+[1, 3, 4, 5]
+
+
+Time complexity: \(O(n^2)\) in the average and worst cases.
+16. Selection Sort
+Selection sort finds the smallest remaining element and places it in the correct position.
+a = [4, 2, 5, 1]
+for i in range(len(a)): 
+   m = i   
+ for j in range(i + 1, len(a)):     
+   if a[j] < a[m]:       
+     m = j    a[i], a[m] = a[m], a[i]print(a)
+Output:
+[1, 2, 4, 5]
+
+
+Time complexity: \(O(n^2)\)
+17. Insertion Sort
+Insertion sort takes each element and inserts it into the correct position in the already-sorted part.
+a = [5, 3, 4, 1]
+for i in range(1, len(a)):  
+  key = a[i]    j = i - 1    
+while j >= 0 and a[j] > key:    
+    a[j + 1] = a[j]        j -= 1    a[j + 1] = key
+print(a)
+Output:
+[1, 3, 4, 5]
+
+
+Time complexity: \(O(n^2)\) in the average and worst cases.
+18. Merge Sort
+Merge sort divides a list into smaller parts, sorts them, and merges them.
+a = [5, 2, 4, 1]
+a.sort()
+print(a)
+Output:
+[1, 2, 4, 5]
+
+
+Time complexity: \(O(n\log n)\)
+
+Note: This short example uses Python's built-in sorting. The actual merge sort algorithm uses divide and merge steps.
+19. Quick Sort
+Quick sort selects a pivot, partitions the elements around it, and sorts the partitions.
+a = [7, 3, 9, 2]
+a.sort()
+print(a)
+Output:
+[2, 3, 7, 9]
+
+
+Time complexity: Average \(O(n\log n)\); worst case \(O(n^2)\).
+Level 5: Important Array Techniques
+20. Two Pointers
+Two pointers use two positions to process a list efficiently.
+a = [1, 2, 3, 4]left, right = 0, len(a) - 1while left < right:    
+print(a[left], a[right])    left += 1    right -= 1
+Output:
+1 4
+2 3
+
+
+21. Sliding Window
+Sliding window processes a continuous section of an array without recalculating everything each time.
+a = [1, 2, 3, 4, 5]
+k = 3print(max(sum(a[i:i+k])
+ for i in range(len(a)-k+1)))
+Output:
+12
+
+
+22. Prefix Sum
+A prefix sum stores cumulative totals to help calculate range sums quickly.
+a = [2, 3, 4]
+prefix = []
+total = 0for n in a: 
+   total += n   
+ prefix.append(total)
+print(prefix)
+Output:
+[2, 5, 9]
+
+
+23. Frequency Counting
+Frequency counting calculates how many times each value appears.
+a = [1, 2, 2, 3, 2]
+freq = {}for n in a:  
+  freq[n] = freq.get(n, 0) + 1print(freq)
+Output:
+{1: 1, 2: 3, 3: 1}
+
+
+Level 6: Linked Lists
+24. Linked List
+A linked list stores data in nodes. Each node points to the next node.
+wasilzafar.com
+
+
+class Node:    def __init__(self, data):    
+    self.data = data       
+ self.next = Nonea = Node(10)b = Node(20)
+a.next = bprint(a.data)
+print(a.next.data)
+Output:
+10
+20
+
+
+25. Singly Linked List
+Each node points to the next node only.
+Example: 10 → 20 → 30 → None
+
+26. Doubly Linked List
+Each node has links to both the previous and next nodes.
+Example: None ← 10 ⇄ 20 ⇄ 30 → None
+
+27. Circular Linked List
+The last node points back to the first node.
+Example: 10 → 20 → 30 → 10
+
+
+Level 7: Stack and Queue
+28. Stack
+A stack follows LIFO — Last In, First Out.
+stack = []
+stack.append(10)
+stack.append(20)
+print(stack.pop())
+Output:
+20
+
+29. Queue
+A queue follows FIFO — First In, First Out.
+from collections import dequeq = deque([10, 20, 30])
+print(q.popleft())
+Output:
+10
+
+
+30. Circular Queue
+A circular queue reuses empty positions by connecting the end of the queue back to the beginning.
+Example: Used in buffering and scheduling.
+
+31. Deque
+A deque allows insertion and deletion at both ends.
+from collections 
+import dequed = deque([20, 30])
+d.appendleft(10)
+d.append(40)
+print(d)
+Output:
+deque([10, 20, 30, 40])
+
+
+32. Priority Queue
+A priority queue processes items according to priority rather than only arrival order.
+import heapqh = [30, 10, 20]
+heapq.heapify(h)
+print(heapq.heappop(h))
+Output:
+10
+
+
+Level 8: Hashing
+33. Hash Table
+A hash table stores data as key-value pairs. Python's dictionary is a common example.
+student = {"name": "Arun", "mark": 90}
+print(student["name"])
+Output:
+Arun
+
+
+34. Set
+A set stores unique elements and removes duplicates.
+a = {1, 2, 2, 3, 3}
+print(sorted(a))
+Output:
+[1, 2, 3]
+
+
+35. Hash Set
+A hash set is useful for checking whether an element exists quickly on average.
+a = {10, 20, 30}
+print(20 in a)
+Output:
+True
+
+
+36. Duplicate Detection
+Use a set to find repeated values.
+a = [1, 2, 3, 2, 4]
+seen = set()for n in a: 
+   if n in seen:     
+   print("Duplicate:", n)  
+      break   
+ seen.add(n)
+Output:
+Duplicate: 2
+
+
+Level 9: Recursion
+37. Recursion
+Recursion happens when a function calls itself to solve a smaller version of a problem.
+def count(n):   
+ if n == 0:      
+  return   
+ print(n)    
+count(n - 1)
+count(3)
+Output:
+3
+2
+1
+
+
+38. Base Case
+A base case stops recursion. Without it, recursion may continue until an error occurs.
+def show(n):  
+  if n == 0:      
+  return   
+ print(n)   
+ show(n - 1)
+show(2)
+Output:
+2
+1
+
+
+39. Factorial Using Recursion
+Factorial multiplies a positive integer by all positive integers below it.
+def fact(n): 
+   if n == 1:   
+     return 1   
+ return n * fact(n - 1)
+print(fact(5))
+Output:
+120
+
+
+40. Fibonacci Sequence
+Each Fibonacci number is the sum of the previous two numbers.
+a, b = 0, 1
+for i in range(7):  
+  print(a, end=" ")
+    a, b = b, a + b
+Output:
+0 1 1 2 3 5 8
+
+
+Level 10: Trees
+41. Tree
+A tree is a hierarchical data structure made of nodes connected by edges.
+Example: A computer folder structure.
+
+42. Binary Tree
+A binary tree allows each node to have at most two children.
+Example: A node with a left child and a right child.
+
+43. Binary Search Tree (BST)
+A BST typically stores smaller values on the left and larger values on the right.
+class Node:   
+ def __init__(self, data):       
+ self.data = data      
+  self.left = None       
+ self.right = Noneroot = Node(20)
+root.left = Node(10)
+root.right = Node(30)
+print(root.data)
+print(root.left.data)
+print(root.right.data)
+Output:
+20
+10
+30
+
+
+44. Tree Traversal
+Traversal means visiting all nodes in a tree.
+- Inorder: Left → Root → Right
+- Preorder: Root → Left → Right
+- Postorder: Left → Right → Root
+- Level order: Visit level by level.
+
+
+45. Inorder Traversal
+def inorder(root):    
+if root:      
+  inorder(root.left)    
+    print(root.data, end=" ")     
+   inorder(root.right)inorder(root)
+Output:
+10 20 30
+
+
+46. Binary Search Tree Search
+BST search follows the left or right branch depending on the target value.
+Example: To find 30 in a BST rooted at 20, move right and find 30.
+
+47. Heap
+A heap is a tree-based structure used to retrieve the smallest or largest priority element efficiently.
+import heapqh = [40, 10, 30, 20]
+heapq.heapify(h)
+print(heapq.heappop(h))
+Output:
+10
+
+
+48. Trie
+A trie stores words character by character, making it useful for prefix searches and autocomplete.
+Example: Storing cat, car, and care shares the prefix ca.
+
+Level 11: Graphs
+49. Graph
+A graph consists of vertices (nodes) connected by edges.
+Example: Cities connected by roads or users connected on a social network.
+
+50. Directed Graph
+Edges have a direction.
+Example: A → B
+
+51. Undirected Graph
+Edges work in both directions.
+Example: A — B
+
+52. Weighted Graph
+Each edge has a weight, such as distance or cost.
+Example: A — 10 — B
+
+53. Adjacency List
+An adjacency list stores each node's neighbors.
+graph = {    "A": ["B", "C"],    "B": ["A"],    "C": ["A"]}
+print(graph["A"])
+Output:
+['B', 'C']
+
+
+54. Breadth-First Search (BFS)
+BFS visits nearby nodes first and uses a queue.
+from collections 
+import dequegraph = {"A": ["B", "C"], "B": [], "C": []}
+q = deque(["A"])
+visited = set()
+while q:  
+  node = q.popleft()  
+  if node not in visited:   
+     print(node)        
+visited.add(node)       
+ q.extend(graph[node])
+Output:
+A
+B
+C
+
+
+55. Depth-First Search (DFS)
+DFS explores one path as far as possible before backtracking.
+graph = {"A": ["B", "C"], "B": [], "C": []}
+visited = set()def dfs(node): 
+   if node in visited:      
+  return   
+ visited.add(node)
+    print(node)   
+ for nxt in graph[node]:
+        dfs(nxt)dfs("A")
+Output:
+A
+B
+C
+
+
+56. Dijkstra's Algorithm
+Dijkstra finds shortest paths from a starting node in a graph with non-negative edge weights.
+Example: Finding the shortest road distance between cities.
+
+57. Topological Sorting
+Topological sorting orders the nodes of a directed acyclic graph (DAG) so each prerequisite appears before its dependent task.
+Example: Completing prerequisites before taking a course.
+
+58. Minimum Spanning Tree
+A minimum spanning tree connects all vertices of a connected, undirected, weighted graph with minimum total edge weight.
+Algorithms: Kruskal's algorithm and Prim's algorithm.
+
+
+Level 12: Dynamic Programming (DP)
+59. Dynamic Programming
+Dynamic programming solves problems by storing results of smaller subproblems to avoid repeated calculations.
+
+60. Memoization
+Memoization stores previously calculated results, usually using recursion.
+memo = {}def fib(n):   
+ if n <= 1:   
+     return n   
+ if n not in memo: 
+       memo[n] = fib(n-1) + fib(n-2)    
+return memo[n]
+print(fib(6))
+Output:
+8
+
+
+61. Tabulation
+Tabulation solves subproblems iteratively and stores their answers in a table.
+dp = [0, 1]
+for i in range(2, 7):  
+  dp.append(dp[i-1] + dp[i-2])
+print(dp[6])
+Output:
+8
+
+
+62. Climbing Stairs
+Calculate the number of ways to climb stairs when you can take either one or two steps at a time.
+dp = [0, 1, 2]
+for i in range(3, 6):   
+ dp.append(dp[i-1] + dp[i-2])
+print(dp[5])
+Output:
+8
+
+
+63. 0/1 Knapsack
+Choose items with given weights and values without exceeding the available capacity. Each item can be selected at most once.
+Example: Selecting valuable items that fit into a bag.
+
+64. Longest Common Subsequence (LCS)
+LCS finds the longest sequence common to two strings while preserving character order.
+Example: "ABC" and "AC" have LCS "AC".
+
+
+Level 13: Greedy Algorithms
+65. Greedy Algorithm
+A greedy algorithm chooses the best available option at each step, hoping to achieve the overall goal.
+
+66. Activity Selection
+Select the maximum number of non-overlapping activities, usually by choosing the activity that finishes earliest.
+
+67. Coin Change — Greedy Approach
+Choose the largest available coin that does not exceed the remaining amount.
+Note: This does not give the optimal answer for every coin system.
+
+68. Fractional Knapsack
+Choose items by value-to-weight ratio. Unlike 0/1 knapsack, fractions of items are allowed.
+Example: Taking part of a quantity of rice to maximize value within a weight limit.
+
+
+Level 14: Backtracking
+69. Backtracking
+Backtracking tries a possible solution, then reverses a choice if it does not lead to a valid solution.
+
+70. Permutations
+Permutations generate different possible arrangements of elements.
+from itertools import permutations
+for p in permutations([1, 2, 3]):    
+print(p)
+Output:
+(1, 2, 3)
+(1, 3, 2)
+(2, 1, 3)
+(2, 3, 1)
+(3, 1, 2)
+(3, 2, 1)
+
+
+71. Subsets
+Subsets are all possible selections of elements from a set, including the empty subset.
+Example: For [1, 2], the subsets are [], [1], [2], and [1, 2].
+
+72. N-Queens Problem
+Place N queens on an N×N chessboard so that no two queens attack each other.
+
+73. Sudoku Solver
+Use backtracking to fill empty cells while obeying Sudoku rules.
+
+
+Level 15: Advanced Algorithms
+74. Divide and Conquer
+Divide a problem into smaller parts, solve them, and combine their results.
+Examples: Merge sort and quick sort.
+
+75. Bit Manipulation
+Bit manipulation uses binary operations to process individual bits.
+a = 5b = 3
+print(a & b)
+print(a | b)
+print(a ^ b)
+Output:
+1
+7
+6
+
+
+76. Greedy vs Dynamic Programming
+Greedy makes a locally best choice at each step. Dynamic programming compares or combines solutions to smaller subproblems.
+
+77. Union-Find (Disjoint Set Union)
+Union-Find tracks groups of connected elements and supports merging groups and checking whether elements belong to the same group.
+Example: Checking whether two computers belong to the same connected network.
+
+78. Segment Tree
+A segment tree supports efficient range queries and updates on an array.
+Example: Finding the sum of elements between two indices after values change.
+
+79. Fenwick Tree (Binary Indexed Tree)
+A Fenwick tree supports efficient prefix-sum queries and updates.
+Example: Calculating cumulative totals when individual values change.
+
+80. KMP String Matching
+The Knuth–Morris–Pratt algorithm searches for a pattern in a string without repeatedly checking the same characters.
+Example: Finding "abc" inside "xxabcxx"
+
+
+Level 16: Problem-Solving Patterns
+These patterns help you recognize which technique to use in coding interviews.
+Pattern	When to use it
+Two pointers	Pairs, sorted arrays, reversing
+Sliding window	Continuous subarrays or substrings
+Hash map	Frequencies, duplicates, fast lookup
+Binary search	Sorted data or a monotonic condition
+Fast and slow pointers	Cycle detection in linked lists
+Prefix sum	Repeated range-sum calculations
+BFS	Shortest path in an unweighted graph
+DFS	Exploring paths, trees, and connected components
+Backtracking	Combinations, permutations, constraint problems
+Dynamic programming	Overlapping subproblems and reusable results
+
+
+
+Level 17: Complexity Revision
+Algorithm	       Typical time complexity
+List index access	\(O(1)\)
+Linear search    	\(O(n)\)
+Binary search	        \(O(\log n)\)
+Bubble sort	        \(O(n^2)\)
+Selection sort	        \(O(n^2)\)
+Insertion sort	        \(O(n^2)\) average/worst
+Merge sort	        \(O(n\log n)\)
+Quick sort	        \(O(n\log n)\) average
+BFS / DFS	        \(O(V+E)\) with adjacency lists
+Hash table lookup	\(O(1)\) average
+Heap insertion/removal	\(O(\log n)\)
+
+
+Here, \(n\) is the number of elements, 
+\(V\) is the number of vertices,
+ and \(E\) is the number of edges.
+
+
+
